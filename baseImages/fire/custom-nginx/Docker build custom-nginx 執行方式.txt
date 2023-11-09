@@ -1,7 +1,7 @@
 開啟 MS-DOS 視窗
 
 1. 放 Docerfile 檔案的目錄在 
-   cd E:\Developers\SourceCodes\GitHub\Docker Project\Docker_Study\docker_baseImage\custom-nginx
+   cd E:\Developers\SourceCodes\GitHub\Docker Project\Dockerfile\baseImages\fire\custom-nginx
 
 
 2. 執行 build docker images
