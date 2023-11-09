@@ -1,19 +1,23 @@
 開啟 MS-DOS 視窗
 
 1. 放 Docerfile 檔案的目錄在 
-   cd E:\Developers\SourceCodes\GitHub\Docker Project\Dockerfile\baseImages\fire\custom-openjdk
+   cd E:\Developers\SourceCodes\GitHub\Docker Project\Dockerfile\baseImages\kevinhung\custom-openjdk
 
 
 2. 執行 build docker images
-   docker build -f DockerfileJDK8 -t registry.groupt.fbt.com/tpebnkfiret/custom-alpine-openjdk8:3.18.4 .
-   docker build -f DockerfileJDK17 -t registry.groupt.fbt.com/tpebnkfiret/custom-alpine-openjdk17:3.18.4 . 
+   docker build -f DockerfileJDK8 -t kevinhung/custom-openjdk8:8u392 .
+   docker build -f DockerfileJDK17 -t kevinhung/custom-openjdk17:17.0.9 . 
 
 
 3. 查看 docker image 是否存在 tpebnkfiret 
-   docker images | findstr tpebnkfiret
+   docker images | findstr custom-openjdk8
    
    
 4. 將 images 轉成 tar 存放
-   docker save -o custom-alpine-openjdk8_3_18_4.tar registry.groupt.fbt.com/tpebnkfiret/custom-alpine-openjdk8:3.18.4
-   docker save -o custom-alpine-openjdk17_3_18_4.tar registry.groupt.fbt.com/tpebnkfiret/custom-alpine-openjdk17:3.18.4
+   docker save -o custom-openjdk8_8u392.tar kevinhung/custom-openjdk8:8u392
+   docker save -o custom-openjdk17_17_0_09.tar kevinhung/custom-openjdk17:17.0.9
 
+   
+5. 將 images push 到 DockerHub
+   docker push kevinhung/custom-openjdk8:8u392
+   docker push kevinhung/custom-openjdk17:17.0.9
