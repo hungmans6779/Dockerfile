@@ -6,7 +6,7 @@
 
 2. 執行 build docker images
    docker build -f DockerfileJDK8 -t registry.groupt.fbt.com/tpebnkfiret/custom-alpine-openjdk8:3.18.4 .
-   docker build -f DockerfileJDK8 registry.groupt.fbt.com/tpebnkfiret/custom-alpine-openjdk17:3.18.4 . 
+   docker build -f DockerfileJDK17 -t registry.groupt.fbt.com/tpebnkfiret/custom-alpine-openjdk17:3.18.4 . 
 
 
 3. 查看 docker image 是否存在 tpebnkfiret 
