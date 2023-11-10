@@ -1,0 +1,108 @@
+☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆
+一、《custom-alpine-openjdk8》baseImages
+
+     ※ 建置 baseImage 的 Dockerfile
+        fire\docker\custom-openjdk\Dockerfile
+
+	 1. 「修改前」
+         registry.groupt.fbt.com/tpebnkfiret/custom-alpine-openjdk8:3.18.3
+	     pcldreg.group.fb.com/tpebnkfirep/custom-alpine-openjdk8:3.18.3
+	 
+     2. 「修改後」 	 
+         registry.groupt.fbt.com/tpebnkfiret/custom-alpine-openjdk8:3.18.4
+         pcldreg.group.fb.com/tpebnkfirep/custom-alpine-openjdk8:3.18.4
+
+
+
+     ※ 後台要攸改版本的 Dockerfile
+	 
+	 1. 修改點：
+	    路徑：fire\docker\backend\
+        檔案： a. SIT/UAT 環境：Dockerfile
+		       b. PROD 環境   ：Dockerfile-prod
+			
+	  2. 修改點：
+	     路徑：fire\channel\fireadm\docker\
+	     檔案： a. SIT/UAT 環境：Dockerfile
+	            b. PROD 環境   ：Dockerfile-prod
+
+☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆
+二、《custom-alpine-nginx》baseImages
+         
+     ※ 建置 baseImage 的 Dockerfile
+        fire\docker\custom-nginx\Dockerfile
+		
+     1. 「修改前」
+         registry.groupt.fbt.com/tpebnkfiret/custom-alpine-nginx:1.25.2
+		 pcldreg.group.fb.com/tpebnkfirep/custom-alpine-nginx:1.25.2
+		
+     2. 「修改後」     
+	     registry.groupt.fbt.com/tpebnkfiret/custom-alpine-nginx:1.25.3
+         pcldreg.group.fb.com/tpebnkfirep/custom-alpine-nginx:1.25.3
+
+     
+     ※ 前台使用的 Dockerfile
+	 
+     路徑：fire\frontend\tfb_fire_frontend\docker\
+     檔案： a. SIT  環境：Dockerfile-sit
+			b. UAT  環境：Dockerfile-uat
+		    c. PROD 環境：Dockerfile-prod
+			
+☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆
+三、《redis-custom》baseImages baseImages
+
+     ※ 建置 baseImage 的 Dockerfile
+        a. SIT/UAT 環境：fire\infrastructure\tfb_fire_redis\Dockerfile
+		b. PROD    環境：fire\infrastructure\tfb_fire_redis\Dockerfile-prod
+		需加入：entrypoint.sh
+		
+     1. 「修改前」
+         registry.groupt.fbt.com/tpebnkfiret/redis-custom/7.0.12-alpine3.18-2023072001
+         pcldreg.group.fb.com/tpebnkfirep/redis-custom/7.0.12-alpine3.18-prod-2023072001
+
+     2. 「修改後」 
+         registry.groupt.fbt.com/tpebnkfiret/redis-custom:7.0.14-alpine3.18.4
+		 pcldreg.group.fb.com/tpebnkfirep/redis-custom/redis-custom:7.0.14-alpine3.18.4-prod
+		 
+
+     路徑：fire\infrastructure\tfb_fire_redis\helm-charts\fire-redis
+     檔案： a. SIT  環境：sit-values.yaml
+			b. UAT  環境：uat-values.yaml
+		    c. PROD 環境：prod-values.yaml
+	   
+☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆
+四、《alpine-openssl》baseImages
+
+     ※ 建置 baseImage 的 Dockerfile
+       SIT/UAT/PROD 環境：fire\infrastructure\tfb_fire_redis\encrypt\Dockerfile
+
+     1. 「修改前」
+         registry.groupt.fbt.com/tpebnkfiret/alpine-openssl:3.18.3
+	
+	 2. 「修改後」 
+         registry.groupt.fbt.com/tpebnkfiret/alpine-openssl:3.18.4
+
+
+     ※ 沒有使用 Dockerfile
+       找不到有設定的檔案
+		
+☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆
+五、《nginx》baseImages
+  
+     1. 「修改前」  
+         registry.groupt.fbt.com/tpebnkfiret/nginx:1.25.2
+
+     2. 「修改後」    
+         registry.groupt.fbt.com/tpebnkfiret/nginx:1.25.3
+
+	
+     ※ 沒有使用 Dockerfile
+      
+	   1. 修改點：
+	      路徑：fire\channel\fireadm\
+          檔案： a. 入口     ：build.sh (註解掉)
+		         a. SIT  環境：deploy-sit.sh (無)
+		         b. UAT  環境：deploy-uat.sh (無)
+		         c. PROD 環境：deploy-prod.sh (註解掉)
+			   
+☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆
