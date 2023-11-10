@@ -2,6 +2,7 @@
 
 1. 放 Docerfile 檔案的目錄在 
    cd E:\Developers\SourceCodes\GitHub\Docker Project\Dockerfile\baseImages\fire\redis-custom
+   cd D:\Dockerfile\baseImages\kevinhung\redis-custom
 
 
 2. 執行 build docker images

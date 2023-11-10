@@ -2,7 +2,7 @@
 
 1. 放 Docerfile 檔案的目錄在 
    cd E:\Developers\SourceCodes\GitHub\Docker Project\Dockerfile\baseImages\kevinhung\custom-nginx
-
+   cd D:\Dockerfile\baseImages\kevinhung\custom-nginx
 
 2. 執行 build docker images
    docker build -t kevinhung/custom-nginx:1.25.3 .

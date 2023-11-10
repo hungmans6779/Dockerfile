@@ -2,7 +2,7 @@
 
 1. 放 Docerfile 檔案的目錄在 
    cd E:\Developers\SourceCodes\GitHub\Docker Project\Dockerfile\baseImages\kevinhung\custom-openssl
-
+   cd D:\Dockerfile\baseImages\kevinhung\custom-openssl
 
 2. 執行 build docker images
    docker build -t kevinhung/custom-openssl:3.18.4 .

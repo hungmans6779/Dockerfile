@@ -2,7 +2,7 @@
 
 1. 放 Docerfile 檔案的目錄在 
    cd E:\Developers\SourceCodes\GitHub\Docker Project\Dockerfile\baseImages\kevinhung\custom-openjdk
-
+   cd D:\Dockerfile\baseImages\kevinhung\custom-openjdk
 
 2. 執行 build docker images
    docker build -f DockerfileJDK8 -t kevinhung/custom-openjdk8:8u392 .
