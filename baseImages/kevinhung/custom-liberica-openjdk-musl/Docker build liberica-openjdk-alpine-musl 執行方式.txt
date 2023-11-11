@@ -1,0 +1,33 @@
+參考文章
+https://github.com/bell-sw/Liberica/blob/master/docker/repos/liberica-openjdk-alpine-musl/8/Dockerfile
+https://github.com/bell-sw/Liberica/blob/master/docker/repos/liberica-openjdk-alpine-musl/17/Dockerfile 
+
+   
+開啟 MS-DOS 視窗
+
+
+1. 放 Docerfile 檔案的目錄在 
+   cd E:\Developers\SourceCodes\GitHub\Docker Project\Dockerfile\baseImages\kevinhung\custom-liberica-openjdk-musl
+
+
+2. 執行 build docker images
+  
+  《OpenJDK8》
+   docker build -f DockerfileOpenJDK8 -t kevinhung/custom-liberica-openjdk-musl:8u392 .
+  
+  《OpenJDK17》
+   docker build -f DockerfileOpenJDK17 -t kevinhung/custom-liberica-openjdk-musl:17.0.19 .
+
+
+3. 查看 docker image
+   docker images | findstr custom-liberica-openjdk
+   
+   
+4. 將 images 轉成 tar 存放
+   docker save -o custom-liberica-openjdk-musl_8u392.tar kevinhung/custom-liberica-openjdk-musl:8u392
+   docker save -o custom-liberica-openjdk-musl_17_0_09.tar kevinhung/custom-liberica-openjdk-musl:17.0.19
+
+
+5. 將 images push 到 DockerHub
+   docker push kevinhung/custom-liberica-openjdk-musl:8u392
+   docker push kevinhung/custom-liberica-openjdk-musl:17.0.19
