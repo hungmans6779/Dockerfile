@@ -66,7 +66,7 @@
 04. fire\frontend\tfb_fire_frontend\docker\Dockerfile-prod
 
 ☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆
-三、《redis-custom》baseImages baseImages
+三、《custom-redis》baseImages baseImages
 
      ※ 建置 baseImage 的 Dockerfile
         a. SIT/UAT 環境：fire\infrastructure\tfb_fire_redis\Dockerfile
@@ -78,8 +78,8 @@
          pcldreg.group.fb.com/tpebnkfirep/redis-custom/7.0.12-alpine3.18-prod-2023072001
 
      2. 「修改後」 
-         registry.groupt.fbt.com/tpebnkfiret/redis-custom:7.0.14-alpine3.18.4
-		 pcldreg.group.fb.com/tpebnkfirep/redis-custom/redis-custom:7.0.14-alpine3.18.4-prod
+         registry.groupt.fbt.com/tpebnkfiret/custom-redis:7.0.12-alpine3.18.4
+		 pcldreg.group.fb.com/tpebnkfirep/redis-custom/custom-redis:7.0.12-alpine3.18.4-prod
 		 
 
      路徑：fire\infrastructure\tfb_fire_redis\helm-charts\fire-redis
@@ -88,14 +88,15 @@
 		    c. PROD 環境：prod-values.yaml
 
 
-
-
 《本次修改檔案》
-01.
-02.
-03.
-04.
-05.
+01. fire\infrastructure\tfb_fire_redis\Dockerfile
+02. fire\infrastructure\tfb_fire_redis\Dockerfile-prod
+03. fire\infrastructure\tfb_fire_redis\build-docker-custom.sh
+04. fire\infrastructure\tfb_fire_redis\build-docker-custom-prod.sh
+05. fire\infrastructure\tfb_fire_redis\helm-charts\fire-redis\sit-values.yaml
+06. fire\infrastructure\tfb_fire_redis\helm-charts\fire-redis\uat-values.yaml
+07. fire\infrastructure\tfb_fire_redis\helm-charts\fire-redis\prod-values.yaml
+
 	   
 ☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆
 四、《alpine-openssl》baseImages

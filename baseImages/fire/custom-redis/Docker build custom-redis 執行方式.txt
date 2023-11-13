@@ -6,7 +6,7 @@
 
 2. 執行 build docker images
    docker build -f Dockerfile -t registry.groupt.fbt.com/tpebnkfiret/custom-redis:7.0.12-alpine3.18.4 .
-   docker build -f Dockerfile-prod -t registry.groupt.fbt.com/tpebnkfiret/custom-redis:7.0.12-alpine3.18.4-prod .
+   docker build -f Dockerfile-prod -t pcldreg.group.fb.com/tpebnkfirep/custom-redis:7.0.12-alpine3.18.4-prod .
    
    
 3. 查看 docker image 
@@ -15,4 +15,4 @@
    
 4. 將 images 轉成 tar 存放
    docker save -o custom-redis_7_0_12-alpine3_18_4.tar registry.groupt.fbt.com/tpebnkfiret/custom-redis:7.0.12-alpine3.18.4
-   docker save -o custom-redis_7_0_12-alpine3_18_4-prod.tar registry.groupt.fbt.com/tpebnkfiret/custom-redis:7.0.12-alpine3.18.4-prod
+   docker save -o custom-redis_7_0_12-alpine3_18_4-prod.tar pcldreg.group.fb.com/tpebnkfirep/custom-redis:7.0.12-alpine3.18.4-prod
