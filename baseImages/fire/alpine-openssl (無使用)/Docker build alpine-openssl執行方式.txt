@@ -1,15 +1,15 @@
 開啟 MS-DOS 視窗
 
 1. 放 Docerfile 檔案的目錄在 
-   cd E:\Developers\SourceCodes\GitHub\Docker Project\Dockerfile\baseImages\fire\alpine-openssl
+   cd E:\Developers\SourceCodes\GitHub\Docker Project\Dockerfile\baseImages\fire\alpine-openssl (無使用)
 
 
 2. 執行 build docker images
    docker build -t registry.groupt.fbt.com/tpebnkfiret/alpine-openssl:3.18.4 .
 
 
-3. 查看 docker image 是否存在 tpebnkfiret 
-   docker images | findstr tpebnkfiret
+3. 查看 docker image
+   docker images | findstr alpine-openssl
    
    
 4. 將 images 轉成 tar 存放

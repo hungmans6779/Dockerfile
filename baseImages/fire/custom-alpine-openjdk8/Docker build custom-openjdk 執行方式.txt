@@ -1,0 +1,16 @@
+開啟 MS-DOS 視窗
+
+1. 放 Docerfile 檔案的目錄在 
+   cd E:\Developers\SourceCodes\GitHub\Docker Project\Dockerfile\baseImages\fire\custom-alpine-openjdk8
+
+
+2. 執行 build docker images
+   docker build -t registry.groupt.fbt.com/tpebnkfiret/custom-alpine-openjdk8:3.18.4 .
+
+
+3. 查看 docker image
+   docker images | findstr custom-alpine-openjdk8
+   
+   
+4. 將 images 轉成 tar 存放
+   docker save -o custom-alpine-openjdk8_3_18_4.tar registry.groupt.fbt.com/tpebnkfiret/custom-alpine-openjdk8:3.18.4
