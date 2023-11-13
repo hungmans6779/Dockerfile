@@ -1,14 +1,14 @@
 開啟 MS-DOS 視窗
 
 1. 放 Docerfile 檔案的目錄在 
-   cd E:\Developers\SourceCodes\GitHub\Docker Project\Dockerfile\baseImages\fire\custom-nginx
+   cd E:\Developers\SourceCodes\GitHub\Docker Project\Dockerfile\baseImages\fire\custom-alpine-nginx
 
 
 2. 執行 build docker images
    docker build -t registry.groupt.fbt.com/tpebnkfiret/custom-alpine-nginx:1.25.3 .
 
 
-3. 查看 docker image 是否存在 tpebnkfiret 
+3. 查看 docker image
    docker images | findstr custom-alpine-nginx
    
    
