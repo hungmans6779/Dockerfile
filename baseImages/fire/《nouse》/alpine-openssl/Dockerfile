@@ -1,10 +1,16 @@
 FROM alpine:3.18.4
-ENV TZ=Asia/Taipei
-ENV LANG=zh_TW.UTF-8
-ENV LC_ALL=zh_TW.UTF-8
-RUN apk update
-RUN apk add --upgrade openssl
-RUN apk update && apk upgrade
-RUN ln -snf /usr/share/zoneInfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
-RUN apk add --update ttf-dejavu fontconfig && rm -rf /var/cache/apk/*
-RUN apk add openssl
+ARG USER=default
+ENV HOME /home/$USER
+
+RUN apk --update add openssl
+
+# install sudo as root
+RUN apk --update add sudo
+
+# add new user
+RUN adduser -D $USER \
+        && echo "$USER ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/$USER \
+        && chmod 0440 /etc/sudoers.d/$USER
+
+USER $USER
+WORKDIR $HOME
