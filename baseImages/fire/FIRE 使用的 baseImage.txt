@@ -88,6 +88,7 @@
 		    c. PROD 環境：prod-values.yaml
 
 
+
 《本次修改檔案》
 01. fire\infrastructure\tfb_fire_redis\Dockerfile
 02. fire\infrastructure\tfb_fire_redis\Dockerfile-prod
@@ -97,7 +98,6 @@
 06. fire\infrastructure\tfb_fire_redis\helm-charts\fire-redis\uat-values.yaml
 07. fire\infrastructure\tfb_fire_redis\helm-charts\fire-redis\prod-values.yaml
 
-	   
 ☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆
 四、《alpine-openssl》baseImages
 
@@ -113,7 +113,13 @@
 
      ※ 沒有使用 Dockerfile
        找不到有設定的檔案
-		
+
+	
+《本次修改檔案》	
+01. fire\infrastructure\tfb_fire_redis\encrypt\Dockerfile
+02. fire\infrastructure\tfb_fire_redis\encrypt\build-docker-custom.sh
+03. fire\infrastructure\tfb_fire_redis\encrypt\run-alpine-openssl-image.sh
+	
 ☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆
 五、《nginx》baseImages
   
@@ -121,7 +127,7 @@
          registry.groupt.fbt.com/tpebnkfiret/nginx:1.25.2
 
      2. 「修改後」    
-         registry.groupt.fbt.com/tpebnkfiret/nginx:1.25.3
+         registry.groupt.fbt.com/tpebnkfiret/nginx:1.25.4
 
 	
      ※ 沒有使用 Dockerfile
