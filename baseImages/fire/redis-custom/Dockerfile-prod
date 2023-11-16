@@ -1,0 +1,6 @@
+FROM redis:7.0.12-alpine3.18
+WORKDIR /app
+RUN apk --update add openssl
+COPY entrypoint.sh /app/
+RUN chmod a+x /app/entrypoint.sh
+USER 1000670000

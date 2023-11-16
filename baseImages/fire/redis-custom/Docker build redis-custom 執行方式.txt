@@ -1,0 +1,28 @@
+開啟 MS-DOS 視窗
+
+1. 放 Docerfile 檔案的目錄在 
+   cd E:\Developers\SourceCodes\GitHub\Docker Project\Dockerfile\baseImages\fire\redis-custom
+
+
+
+2. 執行 build docker images
+
+  《sit/uat》
+   docker build -t registry.groupt.fbt.com/tpebnkfiret/redis-custom:7.0.12-alpine3.18-2023072001 -f Dockerfile .
+   
+  《prod》
+   docker build -t pcldreg.group.fb.com/tpebnkfirep/redis-custom:7.0.12-alpine3.18-prod-2023072001 -f Dockerfile-prod .
+   
+   
+ 
+ 
+3. 查看 docker image
+   docker images | findstr redis-custom
+
+
+   
+   
+4. 將 images 轉成 tar 存放
+   docker save -o redis-custom_7_0_12-alpine3_18-2023072001.tar registry.groupt.fbt.com/tpebnkfiret/redis-custom:7.0.12-alpine3.18-2023072001
+   docker save -o redis-custom_7_0_12-alpine3_18-prod_2023072001.tar pcldreg.group.fb.com/tpebnkfirep/redis-custom:7.0.12-alpine3.18-prod-2023072001
+   
