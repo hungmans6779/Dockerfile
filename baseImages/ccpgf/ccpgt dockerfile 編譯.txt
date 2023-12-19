@@ -1,0 +1,4 @@
+docker build -t registry.groupt.fbt.com/tpebnkccpgt/nginx:1.25.3 .
+
+
+docker save -o nginx_1_2-5.tar registry.groupt.fbt.com/tpebnkccpgt/nginx:1.25.3
