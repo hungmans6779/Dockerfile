@@ -1,18 +1,31 @@
 開啟 MS-DOS 視窗
 
-1. 放 Docerfile 檔案的目錄在 
-   cd E:\Developers\SourceCodes\GitHub\Docker Project\Dockerfile\baseImages\fire\custom-redis
+Docerfile 檔案的目錄在 
+cd E:\Developers\SourceCodes\GitHub\Docker Project\Dockerfile\baseImages\fire\custom-redis
 
 
-2. 執行 build docker images
+★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★    
+《測試環境》
+
+1. 執行 build docker images
    docker build -t registry.groupt.fbt.com/tpebnkfiret/custom-redis:7.0.12-alpine3.18.4 -f Dockerfile .
-   docker build -t pcldreg.group.fb.com/tpebnkfirep/custom-redis:7.0.12-alpine3.18.4-prod -f Dockerfile-prod .
-   
-   
-3. 查看 docker image 
-   docker images | findstr custom-redis
-   
-   
-4. 將 images 轉成 tar 存放
+
+2. 查看 docker image 
+   docker images | findstr tpebnkfiret | findstr custom-redis | findstr 7.0.12-alpine3.18.4
+	
+3. 將 images 轉成 tar 存放
    docker save -o custom-redis_7_0_12-alpine3_18_4.tar registry.groupt.fbt.com/tpebnkfiret/custom-redis:7.0.12-alpine3.18.4
+   
+★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★   
+《正式環境》
+
+1. 執行 build docker images
+   docker build -t pcldreg.group.fb.com/tpebnkfirep/custom-redis:7.0.12-alpine3.18.4-prod -f Dockerfile-prod .
+     
+2. 查看 docker image 
+   docker images | findstr tpebnkfirep | findstr custom-redis | findstr 7.0.12-alpine3.18.4-prod
+   
+3. 將 images 轉成 tar 存放
    docker save -o custom-redis_7_0_12-alpine3_18_4-prod.tar pcldreg.group.fb.com/tpebnkfirep/custom-redis:7.0.12-alpine3.18.4-prod
+      
+★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★   

@@ -1,0 +1,32 @@
+★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★   
+開啟 MS-DOS 視窗
+
+1. 放 Docerfile 檔案的目錄在 
+   cd E:\Developers\SourceCodes\GitHub\Docker Project\Dockerfile\baseImages\ccpg\nginx
+
+★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★    
+《測試環境》
+
+1. 執行 build docker images
+   docker build -t registry.groupt.fbt.com/tpebnkccpgt/nginx:1.25.3 .
+
+2. 查看 docker image
+   docker images  | findstr tpebnkccpgt | findstr nginx | findstr 1.25.3
+      
+3. 將 images 轉成 tar 存放
+   docker save -o nginx_1_25_3.tar registry.groupt.fbt.com/tpebnkccpgt/nginx:1.25.3
+   
+★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★    
+《正式環境》
+
+1. 執行 build docker images
+   docker build -t pcldreg.group.fb.com/tpebnkccpgp/nginx:1.25.3 .
+
+2. 查看 docker image
+   docker images  | findstr tpebnkccpgp | findstr nginx | findstr 1.25.3
+      
+3. 將 images 轉成 tar 存放
+   docker save -o nginx_1_25_3-prod.tar pcldreg.group.fb.com/tpebnkccpgp/nginx:1.25.3
+   
+★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★    
+
