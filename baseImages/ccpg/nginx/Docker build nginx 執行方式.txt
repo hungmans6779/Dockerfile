@@ -15,6 +15,10 @@
       
 3. 將 images 轉成 tar 存放
    docker save -o nginx_1_25_3.tar registry.groupt.fbt.com/tpebnkccpgt/nginx:1.25.3
+
+  
+《執行 pod》  
+ docker run -it registry.groupt.fbt.com/tpebnkccpgt/nginx:1.25.3 /bin/sh
    
 ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★    
 《正式環境》
@@ -29,4 +33,3 @@
    docker save -o nginx_1_25_3-prod.tar pcldreg.group.fb.com/tpebnkccpgp/nginx:1.25.3
    
 ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★    
-

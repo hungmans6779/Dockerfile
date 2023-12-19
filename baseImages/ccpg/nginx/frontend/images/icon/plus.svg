@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22">
+    <g data-name="Ellipse 2" style="stroke:#707070;fill:none">
+        <circle cx="11" cy="11" r="11" style="stroke:none"/>
+        <circle cx="11" cy="11" r="10.5" style="fill:none"/>
+    </g>
+    <path data-name="Line 23" transform="translate(5.5 11)" style="stroke:#707070;fill:none" d="M0 0h11"/>
+    <path data-name="Line 24" transform="translate(11 5.5)" style="stroke:#707070;fill:none" d="M0 0v11"/>
+</svg>

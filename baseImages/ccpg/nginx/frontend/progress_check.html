@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <title>台北富邦銀行 辦卡進度</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+    <!-- Google Tag Manager -->
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(), event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KHWCGTV');
+    </script>
+    <!-- End Google Tag Manager -->
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHWCGTV" height="0" width="0"
+            style="display:none;visibility:hidden">
+        </iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="wrapper" id="wrapper">
+        <div class="loading">
+            <div class="box flexBox">
+                Loading
+                <span></span>
+            </div>
+        </div>
+        <div class="kv">
+            <h1 class="logo"><span>台北富邦銀行</span><a href="https://www.fubon.com/banking/personal/index.htm"><img
+                        src="images/logo.png" alt="台北富邦銀行"></a></h1>
+            <div class="kvImg">
+                <img src="images/kv-bg.png" alt="" class="pc">
+                <img src="images/kv-m.png" alt="" class="mb">
+            </div>
+            <h3>辦卡進度查詢及補件</h3>
+        </div>
+        <div class="main">
+            <div class="section step1">
+                <!-- 系統維護 alert -->
+                <div class="system-warn">
+                    <p>
+                        <span><img src="images/icon/warn-red.svg" alt=""></span>
+                    <p class="system-warn-text"></p>
+                    </p>
+                </div>
+                <form class="form" id="form-info">
+                    <h3>請輸入以下資料，以查詢信用卡申辦進度或進行線上補件，謝謝。</h3>
+                    <div class="row">
+                        <div class="title">
+                            身分證字號
+                        </div>
+                        <div class="input-block pid">
+                            <input type="text" maxlength="10" id="personalId" oninput="onPidInput()"
+                                style="text-transform: uppercase;" autocomplete="off">
+                        </div>
+                        <div class="error-alert" data-alert=""></div>
+                    </div>
+                    <div class="row birth">
+                        <div class="title">
+                            出生年月日
+                        </div>
+                        <div class="box">
+                            <div class="input-block year">
+                                <select name="year" id="year"></select>
+                            </div>
+                            <div class="error-alert" data-alert=""></div>
+                            <div class="input-block month">
+                                <select name="month" id="month"></select>
+                            </div>
+                            <div class="error-alert" data-alert=""></div>
+                            <div class="input-block day">
+                                <select name="day" id="day"></select>
+                            </div>
+                            <div class="error-alert" data-alert=""></div>
+                        </div>
+                    </div>
+                    <div class="row code-box">
+                        <div class="title">
+                            驗證碼
+                        </div>
+                        <div class="code-item">
+                            <div class="input-block picCode">
+                                <input type="tel" id="picCode" maxlength="6" oninput="onPicCodeInput()"
+                                    autocomplete="off">
+                            </div>
+                            <div class="error-alert" data-alert=""></div>
+
+                            <div class="code">
+                                <img src="images/code.jpg" alt="">
+                            </div>
+                            <p onclick="getPicCode()">更新驗證碼</p>
+                        </div>
+                    </div>
+                    <div class="button" onclick="sendInfo()">
+                        送出
+                    </div>
+                    <a class="reset" onclick="reset()">
+                        <p><span><img src="images/icon/reset.svg" alt=""></span> 清除重填</p>
+                    </a>
+                </form>
+            </div>
+
+            <!-- 錯誤訊息popup -->
+            <div class="popup" data-pop="error">
+                <div class="container">
+                    <h3>系統訊息</h3>
+                    <p class="info"></p>
+                    <div class="understand" onclick="closePopup('error', location.href='progress_check.html')">
+                        確認
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-notice">
+            <div class="content">
+                <div class="box">
+                    <h3>謹慎理財 信用無價</h3>
+                </div>
+                <div class="box">
+                    <p>信用卡循環年利率：本行指數型房貸基準利率(I)+加碼利率(該加碼利率區間為0.62%~14.00%，基準日為108.1.1)；年利率上限為15%。 預借現金手續費：預借金額×2.5%。
+                        其他費用請至<a href="https://www.fubon.com" target="blank">https://www.fubon.com</a>查詢。</p>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="content ">
+                <p>© 台北富邦商業銀行股份有限公司</p>
+                <p>建議瀏覽器版本：Edge、Chrome、Safari、FireFox 以上最新版本</p>
+            </div>
+        </footer>
+    </div>
+    <script type="text/javascript" src="js/vendors/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="js/vendors/jquery-migrate-3.0.0.min.js"></script>
+    <script type="text/javascript" src="js/vendors/croppie.min.js"></script>
+    <script type="text/javascript" src="js/date.js"></script>
+    <!-- <script type="text/javascript" src="/edNote.js"></script> -->
+    <script type="text/javascript" src="/config.js"></script>
+    <script type="text/javascript"
+        src="https://www.fubon.com/banking/Content/js/appDev/progress_check/edNote.js"></script>
+    <script>
+        let picCodeTimer;
+
+        $(document).ready(function () {
+            getPicCode();
+        });
+
+        $(window).unload(function () {
+            $('#form-info')[0].reset();
+        });
+
+        function getPicCode() {
+            // 拿圖形驗證碼圖、jwt token更新到storage
+            fetch(`${domain}/api/v1/getPicCode`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                mode: 'cors',
+            })
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (data) {
+                    $('.loading').fadeOut(350);
+                    if (data.code == '0000') {
+                        $('.code img').attr('src', `data:image/jpeg;base64, ${data.data.image}`);
+                        sessionStorage.setItem('token', data.jwtToken);
+                    } else {
+                        $('.popup .info').html(`${data.message}`);
+                        openPopup('error');
+                    }
+                })
+                .catch(function (error) {
+                    $('.loading').fadeOut(350);
+                    $('.popup .info').html(error.error);
+                    openPopup('error');
+                });
+
+            clearTimeout(picCodeTimer);
+            picCodeTimer = setTimeout(() => {
+                getPicCode();
+            }, 180000);
+        }
+
+        function openPopup(target) {
+            $('.popup[data-pop="' + target + '"]').fadeIn();
+        }
+
+        function closePopup(target) {
+            $('.popup[data-pop="' + target + '"]').fadeOut();
+        }
+
+        function onPidInput() {
+            // 全形轉半形、過濾英數字以外
+            let str = $('#personalId').val();
+            let tmp = '';
+
+            for (var i = 0; i < str.length; i++) {
+                if (str.charCodeAt(i) == 12288) {
+                    tmp += String.fromCharCode(str.charCodeAt(i) - 12256);
+                    continue;
+                }
+                if (str.charCodeAt(i) > 65280 && str.charCodeAt(i) < 65375) {
+                    tmp += String.fromCharCode(str.charCodeAt(i) - 65248);
+                }
+                else {
+                    tmp += String.fromCharCode(str.charCodeAt(i));
+                }
+            }
+
+            tmp = tmp.replace(/[^A-Za-z0-9]/g, '');
+            $('#personalId').val(tmp);
+        }
+
+        function onPicCodeInput() {
+            // 過濾數字以外
+            let str = $('#picCode').val();
+            str = str.replace(/[^0-9]/g, '');
+            $('#picCode').val(str);
+        }
+
+        function sendInfo() {
+            let idVal = $('#personalId').val();
+            verifyId(idVal);
+
+            if ($('#year').val() == '') {
+                $('.year').next().attr('data-alert', '請選擇出生年月日');
+                $('.year.input-block').addClass('error');
+                return false
+            } else {
+                $('.year').next().removeAttr('data-alert', '請選擇出生年月日');
+                $('.year.input-block').removeClass('error');
+            }
+            if ($('#month').val() == '') {
+                $('.month').next().attr('data-alert', '請選擇出生年月日');
+                $('.month.input-block').addClass('error');
+                return false
+            } else {
+                $('.month').next().removeAttr('data-alert', '請選擇出生年月日');
+                $('.month.input-block').removeClass('error');
+            }
+            if ($('#day').val() == '') {
+                $('.day').next().attr('data-alert', '請選擇出生年月日');
+                $('.day.input-block').addClass('error');
+                return false
+            } else {
+                $('.day').next().removeAttr('data-alert', '請選擇出生年月日');
+                $('.day.input-block').removeClass('error');
+            }
+            if ($("#picCode").val() == '') {
+                $('.picCode').next().attr('data-alert', '請輸入驗證碼');
+                $('.picCode.input-block').addClass('error');
+                return false
+            } else {
+                $('.picCode').next().removeAttr('data-alert', '請輸入驗證碼');
+                $('.picCode.input-block').removeClass('error');
+            }
+            if ($('#picCode').val().length != 6) {
+                $('.picCode').next().attr('data-alert', '請輸入六位數字');
+                $('.picCode.input-block').addClass('error');
+                return false
+            } else {
+                $('.picCode').next().removeAttr('data-alert', '請輸入六位數字');
+                $('.picCode.input-block').removeClass('error');
+            }
+
+            if ($('.input-block.error').length != 0) return false;
+
+            $('.loading').fadeIn(350);
+
+            let formData = {
+                custId: $('#personalId').val().toUpperCase(),
+                bdayYear: $('#year').val(),
+                bdayMonth: $('#month').val().padStart(2, 0),
+                bdayDay: $('#day').val().padStart(2, 0),
+                picCode: $('#picCode').val()
+            }
+
+            fetch(`${domain}/api/v1/getCustomer`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                    authorization: `Bearer ${sessionStorage.getItem('token')}`
+                },
+                mode: 'cors',
+                body: JSON.stringify(formData)
+            })
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (data) {
+                    if (data.code == '0000') {
+                        // progress_info data
+                        sessionStorage.setItem('formData', JSON.stringify(formData));
+                        sessionStorage.setItem('customerData', JSON.stringify(data.data));
+                        location.href = 'progress_info.html';
+                    } else {
+                        switch (data.code) {
+                            case '1005': {
+                                $('.picCode').next().attr('data-alert', '驗證碼輸入錯誤');
+                                $('.picCode.input-block').addClass('error');
+                                break;
+                            }
+                            case '1008': {
+                                $('.pid').next().attr('data-alert', '請輸入正確身分證字號');
+                                $('.pid.input-block').addClass('error');
+                                break;
+                            }
+                            case '1001':
+                            case '1002':
+                            case '1003': {
+                                location.reload();
+                            }
+                            default: {
+                                $('.popup .info').html(`${data.message}`);
+                                openPopup('error');
+                            }
+                        }
+                    }
+                    $('.loading').fadeOut(350);
+                })
+                .catch(function (error) {
+                    $('.popup .info').html(error.error);
+                    openPopup('error');
+                    $('.loading').fadeOut(350);
+                });
+        }
+
+        function verifyId(id) {
+            id = id.trim();
+
+            if (id.length == 0) {
+                $('.pid').next().attr('data-alert', '請輸入身分證字號');
+                $('.pid.input-block').addClass('error');
+                return false
+            } else {
+                $('.pid').next().removeAttr('data-alert', '請輸入身分證字號');
+                $('.pid.input-block').removeClass('error');
+            }
+
+            if (id.length != 10) {
+                $('.pid').next().attr('data-alert', '身份證字號須為 10 碼');
+                $('.pid.input-block').addClass('error');
+                return false
+            } else {
+                $('.pid').next().removeAttr('data-alert', '身份證字號須為 10 碼');
+                $('.pid.input-block').removeClass('error');
+            }
+
+            let genderCode = id.charCodeAt(1);
+            const acceptList = [49, 50, 56, 57, 65, 66, 67, 68]
+            // 1,2,8,9,A,B,C,D
+            if (!acceptList.includes(genderCode)) {
+                $('.pid').next().attr("data-alert", "請輸入正確身分證字號");
+                $('.pid.input-block').addClass('error')
+                return false
+            } else {
+                $('.pid').next().removeAttr("data-alert", "請輸入正確身分證字號");
+                $('.pid.input-block').removeClass('error')
+            }
+
+            let countyCode = id.slice(0, 1);
+            if (!/[A-Za-z]/.test(countyCode)) {
+                $('.pid').next().attr('data-alert', '請輸入正確身分證字號');
+                $('.pid.input-block').addClass('error');
+                return false
+            } else {
+                $('.pid').next().removeAttr('data-alert', '請輸入正確身分證字號');
+                $('.pid.input-block').removeClass('error')
+            }
+
+            let idNumber = id.slice(2, 10);
+            if (/[A-Za-z]/.test(idNumber)) {
+                $('.pid').next().attr('data-alert', '請輸入正確身分證字號');
+                $('.pid.input-block').addClass('error');
+                return false
+            } else {
+                $('.pid').next().removeAttr('data-alert', '請輸入正確身分證字號');
+                $('.pid.input-block').removeClass('error')
+            }
+        }
+
+        function reset() {
+            $('#form-info')[0].reset();
+            $('.pid').next().removeAttr('data-alert', '');
+            $('.pid.input-block').removeClass('error');
+            $('.picCode').next().removeAttr('data-alert', '');
+            $('.picCode.input-block').removeClass('error');
+        }
+    </script>
+</body>
+
+</html>

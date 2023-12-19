@@ -1,0 +1,36 @@
+★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★ 
+開啟 MS-DOS 視窗
+
+Docerfile 檔案的目錄在 
+cd E:\Developers\SourceCodes\GitHub\Docker Project\Dockerfile\baseImages\atmln\custom-liberica-openjdk17-alpine-musl
+ 
+★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★    
+《測試環境》
+
+1. 執行 build docker images
+   docker build -t registry.groupt.fbt.com/tpebnkatmapt/custom-liberica-openjdk17-alpine-musl:3.18.4 .
+   
+2. 查看 docker image
+   docker images | findstr tpebnkatmapt | findstr custom-liberica-openjdk17-alpine-musl | findstr 3.18.4
+     
+3. 將 images 轉成 tar 存放
+   docker save -o custom-liberica-openjdk17-alpine-musl_3_18_4.tar registry.groupt.fbt.com/tpebnkatmapt/custom-liberica-openjdk17-alpine-musl:3.18.4
+
+★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★    
+《正式環境》
+
+1. 執行 build docker images
+   docker build -t pcldreg.group.fb.com/tpebnkatmapp/custom-liberica-openjdk17-alpine-musl:3.18.4 .
+   
+2. 查看 docker image
+   docker images | findstr tpebnkatmapp | findstr custom-liberica-openjdk17-alpine-musl | findstr 3.18.4
+     
+3. 將 images 轉成 tar 存放
+   docker save -o custom-liberica-openjdk17-alpine-musl_3_18_4-prod.tar  pcldreg.group.fb.com/tpebnkatmapp/custom-liberica-openjdk17-alpine-musl:3.18.4
+
+★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★   
+
+參考文章
+https://github.com/bell-sw/Liberica/blob/master/docker/repos/liberica-openjdk-alpine-musl/17/Dockerfile 
+
+★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★   

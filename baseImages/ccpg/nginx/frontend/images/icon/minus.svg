@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="28.917" height="28.917" viewBox="0 0 28.917 28.917">
+    <g data-name="Ellipse 1" style="fill:#009e9c;stroke:#fff;stroke-width:3px">
+        <circle cx="14.458" cy="14.458" r="14.458" style="stroke:none"/>
+        <circle cx="14.458" cy="14.458" r="12.958" style="fill:none"/>
+    </g>
+    <path data-name="Rectangle 107" transform="rotate(45 -5.267 16.128)" style="fill:#fff" d="M0 0h15v2H0z"/>
+    <path data-name="Rectangle 116" transform="rotate(135 8.192 9.17)" style="fill:#fff" d="M0 0h15v2H0z"/>
+</svg>
