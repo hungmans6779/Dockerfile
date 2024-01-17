@@ -1,0 +1,16 @@
+開啟 MS-DOS 視窗
+
+1. 放 Docerfile 檔案的目錄在 
+   cd D:\Developers\SourceCodes\GitHub\Docker Project\Dockerfile\baseImages\kevinhung\custom-openjdk\jdk8
+
+2. 執行 build docker images
+   docker build -f DockerfileJDK8 -t kevinhung/custom-openjdk8:8u392 .
+
+3. 查看 docker image 是否存在 tpebnkfiret 
+   docker images | findstr custom-openjdk8 | findstr 8u392
+   
+4. 將 images 轉成 tar 存放
+   docker save -o custom-openjdk8_8u392.tar kevinhung/custom-openjdk8:8u392
+   
+5. 將 images push 到 DockerHub
+   docker push kevinhung/custom-openjdk8:8u392
