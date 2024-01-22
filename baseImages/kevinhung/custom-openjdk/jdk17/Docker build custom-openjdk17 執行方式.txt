@@ -4,13 +4,13 @@
    cd D:\Developers\SourceCodes\GitHub\Docker Project\Dockerfile\baseImages\kevinhung\custom-openjdk\jdk17
 
 2. 執行 build docker images
-   docker build -f DockerfileJDK17 -t kevinhung/custom-openjdk17:17.0.9 . 
+   docker build -f DockerfileJDK17 -t kevinhung/custom-openjdk:17.0.9 . 
 
 3. 查看 docker image 是否存在 tpebnkfiret 
    docker images | findstr custom-openjdk17 | findstr 17.0.9
    
 4. 將 images 轉成 tar 存放
-   docker save -o custom-openjdk17_17_0_09.tar kevinhung/custom-openjdk17:17.0.9
+   docker save -o custom-openjdk17_17_0_9.tar kevinhung/custom-openjdk:17.0.9
 
 5. 將 images push 到 DockerHub
-   docker push kevinhung/custom-openjdk17:17.0.9
+   docker push kevinhung/custom-openjdk:17.0.9

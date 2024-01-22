@@ -1,4 +1,4 @@
-FROM alpine:3.18.4
+FROM alpine:3.18.5
 
 ENV TZ=Asia/Taipei
 ENV LANG=zh_TW.UTF-8
